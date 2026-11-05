@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title th:text="${titulo}">Rincones de Cartagena</title>
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title th:text="${titulo}">Título</title>
+  <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
-    <header class="cabecera">
-        <h1 th:text="${titulo}">Titulo</h1>
-        <p>Pagina armada por SpringBoot a las <strong th:text="${hora}">Hora</strong></p>
-    </header>
-    <p class="vacio" th:if="${#lists.isEmpty(lugares)}">Todavía no hay lugares. ¡Agregue el primero!</p>
-    <main class="tarjetas">
-        <article class="tarjeta" th:each="lugar : ${lugares}">
-            <span class="sector" th:text="${lugar.sector}">Sector</span>
-            <h2 th:text="${lugar.nombre}">Nombre del lugar</h2>
-            <p th:text="${lugar.direccion}">Descripcion del lugar</p>
-        </article>
-
-    </main>
-
-    <footer class="pie">
-        <p>SENA · ADSO · FICHA: 3230489 · Erick Cantillo</p>
-    </footer>
+  <header class="cabecera">
+    <h1 th:text="${titulo}">Título</h1>
+    <p>Página armada por Spring Boot a las <strong th:text="${hora}">00:00:00</strong></p>
+    <a th:href="@{/lugares/nuevo}" class="boton">+ Nuevo lugar</a>
+  </header>
+ 
+  <p class="vacio" th:if="${#lists.isEmpty(lugares)}">Todavía no hay lugares. ¡Agregue el primero!</p>
+ 
+  <main class="tarjetas">
+    <article class="tarjeta" th:each="lugar : ${lugares}">
+      <span class="sector" th:text="${lugar.sector}">Sector</span>
+      <h2 th:text="${lugar.nombre}">Nombre del lugar</h2>
+      <p th:text="${lugar.descripcion}">Descripción del lugar</p>
+      <div class="acciones">
+        <a th:href="@{/lugares/{id}/editar(id=${lugar.id})}" class="boton secundario">Editar</a>
+        <form th:action="@{/lugares/{id}/eliminar(id=${lugar.id})}" method="post"
+              onsubmit="return confirm('¿Eliminar este lugar?')">
+          <button type="submit" class="boton peligro">Eliminar</button>
+        </form>
+      </div>
+    </article>
+  </main>
+ 
+  <footer class="pie">SENA · ADSO · Ficha 3230489</footer>
 </body>
-
 </html>

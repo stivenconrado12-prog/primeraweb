@@ -114,3 +114,66 @@ body {
   color: #777;
   font-size: 0.85rem;
 }
+
+/* ===== NUEVO: botones y formulario ===== */
+.boton {
+  display: inline-block;
+  background: var(--amarillo);
+  color: var(--texto);
+  border: 0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+ 
+.boton.secundario {
+  background: #e8e8e8;
+}
+ 
+.boton.peligro {
+  background: var(--buganvilla);
+  color: white;
+}
+ 
+.acciones {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+ 
+.vacio {
+  text-align: center;
+  margin-top: 32px;
+}
+ 
+.formulario {
+  max-width: 520px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+ 
+.formulario form {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+ 
+.formulario label {
+  display: block;
+  font-weight: bold;
+  margin: 12px 0 4px;
+}
+ 
+.formulario input,
+.formulario textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font: inherit;
+}

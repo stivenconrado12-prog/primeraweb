@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title th:text="${accion}">Lugar</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="cabecera">
+    <h1 th:text="${accion}">Nuevo lugar</h1>
+  </header>
+ 
+  <main class="formulario">
+    <form th:action="@{/lugares}" th:object="${lugar}" method="post">
+      <input type="hidden" th:field="*{id}">
+ 
+      <label for="nombre">Nombre</label>
+      <input type="text" th:field="*{nombre}" required>
+ 
+      <label for="sector">Sector</label>
+      <input type="text" th:field="*{sector}" required>
+ 
+      <label for="descripcion">Descripción</label>
+      <textarea th:field="*{descripcion}" rows="3" required></textarea>
+ 
+      <div class="acciones">
+        <button type="submit" class="boton">Guardar</button>
+        <a th:href="@{/}" class="boton secundario">Cancelar</a>
+      </div>
+    </form>
+  </main>
+ 
+  <footer class="pie">SENA · ADSO · Ficha 3230489 · Stiven Daniel Conrado Romero</footer>
+</body>
+</html>
