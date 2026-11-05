@@ -13,6 +13,7 @@
         <h1 th:text="${titulo}">Titulo</h1>
         <p>Pagina armada por SpringBoot a las <strong th:text="${hora}">Hora</strong></p>
     </header>
+    <p class="vacio" th:if="${#lists.isEmpty(lugares)}">Todavía no hay lugares. ¡Agregue el primero!</p>
     <main class="tarjetas">
         <article class="tarjeta" th:each="lugar : ${lugares}">
             <span class="sector" th:text="${lugar.sector}">Sector</span>
