@@ -11,6 +11,7 @@
     <h1 th:text="${titulo}">Título</h1>
     <p>Página armada por Spring Boot a las <strong th:text="${hora}">00:00:00</strong></p>
     <a th:href="@{/lugares/nuevo}" class="boton">+ Nuevo lugar</a>
+    <a th:href="@{/elaboradopor}" class="boton">Elaborado por</a>
   </header>
  
   <p class="vacio" th:if="${#lists.isEmpty(lugares)}">Todavía no hay lugares. ¡Agregue el primero!</p>

@@ -64,4 +64,14 @@ public class InicioController {
         repo.deleteById(id);
         return "redirect:/";
     }
+
+
+
+
+
+    @GetMapping("/elaboradopor") 
+    public String elaboradopor(Model model) {
+        model.addAttribute("accion", "Elaborado por");
+        return "elaborado"; 
+    }
 }

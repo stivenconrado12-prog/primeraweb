@@ -177,3 +177,9 @@ body {
   border-radius: 6px;
   font: inherit;
 }
+
+.name{
+  font: 1em sans-serif;
+  font-weight: bolder;
+  text-align: center;
+}

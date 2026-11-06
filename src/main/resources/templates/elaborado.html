@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title th:text="${accion}">Lugar</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="cabecera">
+    <h1 th:text="${accion}">Elaborado por: </h1>
+  </header>
+ 
+  <main class="name">
+    <h3>STIVEN DANIEL CONRADO ROMERO</h3>
+     <a th:href="@{/}" class="boton secundario">REGRESAR</a>
+  </main>
+</body>
+</html>
